@@ -1,0 +1,30 @@
+@use 'abstracts/_variables' as *;
+@use 'base/_typography' as *;
+
+@use 'abstracts/_mixins' as *;
+@use 'abstracts/_functions';
+@use 'abstracts/_placeholders';
+
+@use 'base/_reset';
+
+@use 'components/_button';
+
+@use 'layout/_navigation';
+@use 'layout/_welcome.scss';
+@use 'layout/_grid';
+@use 'layout/_header';
+@use 'layout/_footer';
+@use 'layout/_forms';
+@use 'layout/_sidebar';
+@use 'layout/_form';
+@use 'layout/preparation';
+
+
+body {
+    overflow-x: hidden;
+}
+
+.div{
+    height: 100vh;
+    width: 100vw;
+}

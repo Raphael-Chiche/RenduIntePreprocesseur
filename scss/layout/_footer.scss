@@ -1,0 +1,22 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use '../base/typography' as *;
+
+footer {
+  background-color: $color-primary-green;
+  padding: 40px;
+  .infoFooter {
+    @include displayFlex($justify: space-between);
+    flex-direction: row;
+
+    div {
+      @include displayFlex();
+      flex-direction: column;
+
+      h3{
+        font-weight: $font-weight-large;
+        padding-bottom: 24px;
+      }
+    }
+  }
+}

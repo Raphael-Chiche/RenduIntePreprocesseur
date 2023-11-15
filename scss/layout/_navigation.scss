@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as *;
+
+nav{
+    @include displayFlex($justify: space-between);
+    padding: 20px 30px;
+    width: 100%;
+
+    ul{
+        @include displayFlex();
+        list-style: none;
+
+       li{
+        margin: 0px 25px;
+       }
+       button{
+        margin: 0px 25px;
+       }
+    }
+}

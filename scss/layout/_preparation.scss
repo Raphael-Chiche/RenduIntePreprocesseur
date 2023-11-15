@@ -1,0 +1,40 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.div_fifth {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../images/louis-hansel-MlPD-AzZYMg-unsplash.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 128px 124px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .prepa {
+    margin: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    &_verts {
+      grid-column: 1/2;
+      background-color: $color-primary-green;
+      &_un {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &_deux {
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+      &_text {
+        grid-column: 1/3;
+        grid-row: 1/2;
+      }
+    }
+    &_bleus {
+      grid-column: 2/3;
+      background-color: #60a0d8;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.menu {
+  * {
+    color: #606060;
+  }
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  background-image: url("../../images/pattern.png");
+  @include breakpoint(900px, "max") {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+  }
+  &_Intro {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    @include displayFlex($flex: column);
+    margin: 20px 200px;
+    padding: 50px;
+    text-align: center;
+    @include breakpoint(900px, "max") {
+      padding: 0px;
+      margin: 30px;
+    }
+
+    h3 {
+      color: $color-primary-green;
+      font-size: $font-size-large;
+      font-weight: $font-weight-large;
+    }
+  }
+
+  &_Salades {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    padding: 30px;
+    justify-content: space-around;
+
+    &_salade {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      &_nomPrix {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 0;
+        h4 {
+          color: $color-primary-green;
+        }
+      }
+    }
+  }
+
+  .saladeVendu {
+    display: flex;
+    flex-direction: column;
+    &_plus {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      p {
+        background-color: $color-primary-green;
+        color: white;
+        padding: 5px;
+        outline: 1px solid $color-primary-green;
+      }
+    }
+    .borderSalade {
+      padding: 10px;
+      outline: 1px solid $color-primary-green;
+    }
+  }
+
+  .passerCommande {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    @include displayFlex($flex: column);
+    @include breakpoint(900px, "max") {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+    &_forceVerte {
+      color: $color-primary-green;
+      font-style: italic;
+      font-size: 54px;
+      rotate: -9deg;
+      font-weight: 300;
+    }
+    &_forceBleue {
+      @extend .passerCommande_forceVerte;
+      color: rgb(97, 161, 217);
+    }
+    p {
+      padding: 50px;
+      text-align: center;
+    }
+    button {
+      color: white;
+    }
+  }
+}

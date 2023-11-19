@@ -1,24 +1,30 @@
-@use '../abstracts/_variables' as *;
-@use '../base/_typography' as *;
+@use "../abstracts/_variables" as *;
+@use "../base/_typography" as *;
 
-.button{
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+.button {
+  border: none;
+  border-radius: 5px;
+  padding: 14px 60px;
+  font-size: 16px;
+  cursor: pointer;
 
-    &_primary{
-        
+  &_primary {
     background-color: white;
     color: $color-primary-green;
     font-weight: $font-weight-large;
+    &:hover {
+      background-color: rgb(219, 219, 219);
+      transition: 0.3s;
     }
+  }
 
-    &_secondary{
-        background-color: $color-primary-green;
-        color: white;
+  &_secondary {
+    background-color: $color-primary-green;
+    color: white;
+
+    &:hover {
+      background-color: #9bb925;
+      transition: 0.3s;
     }
-
-    
+  }
 }

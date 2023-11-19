@@ -2,29 +2,83 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
-.div_sixth {
+.formulaire {
   background-image: url("../../images/61842.png");
   display: flex;
   align-items: center;
+  height: 100vh;
+  @include breakpoint(900px, "max") {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 
   h3,
   p,
   label {
-    color: black;
-  }
-  .imgSixth {
-    width: 50%;
-    @include displayFlex();
+    color: #606060;
   }
 
-  .textSixth {
+  &_image {
     width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: stretch;
+    @include displayFlex();
+
+    img {
+      width: auto;
+      clip-path: polygon(
+        49% 49%,
+        51% 49%,
+        51% 0%,
+        100% 0%,
+        100% 49%,
+        51% 49%,
+        51% 51%,
+        100% 51%,
+        100% 100%,
+        51% 100%,
+        51% 51%,
+        49% 51%,
+        49% 100%,
+        0% 100%,
+        0% 51%,
+        51% 51%,
+        51% 49%,
+        49% 49%,
+        0% 49%,
+        0% 0%,
+        49% 0%
+      );
+
+      @include breakpoint(900px, "max") {
+        max-width: 100vw;
+      }
+    }
+
+    &_barre {
+      height: 50px;
+      width: 7px;
+      background-color: white;
+      z-index: 1;
+      position: absolute;
+      &_vertical {
+        @extend .formulaire_image_barre;
+        rotate: 90deg;
+      }
+    }
+  }
+
+  &_Text {
+    width: 50%;
+    @include displayFlex(
+      $justify: space-around,
+      $align: stretch,
+      $flex: column
+    );
     padding: 50px;
-    .introTxtSixth {
+    @include breakpoint(900px, "max") {
+      width: auto;
+      padding: 20px;
+    }
+    &_Intro {
       padding-bottom: 20px;
       h3 {
         color: $color-primary-green;
@@ -38,16 +92,18 @@
       flex-direction: column;
       align-items: stretch;
       .submit {
-        display: flex;
-        justify-content: center;
+        @include displayFlex();
       }
       .nomPrenom {
         display: flex;
         justify-content: space-between;
+        width: 100%;
+        gap: 10px;
       }
       .label {
         display: flex;
         flex-direction: column;
+        width: 100%;
         input {
           border: 1px solid #d6d6d6;
           height: 45px;

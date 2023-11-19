@@ -1,34 +1,62 @@
-header{
-    height: 100vh;
-    width: 100vw;
-    background-image: linear-gradient(to right, rgba(96, 160, 216, 0.62), rgba(179, 210, 52, 0.62)), url("../../images/Header_back.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    
-}   
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
 
-.reseaux{
-    bottom: 24px;
-    right: 20px;
-    align-self: flex-end;
-    position: relative;
+.div_accueil {
+  position: relative;
+  z-index: 2;
+}
+header {
+  height: 100vh;
+  // width: 100vw;
+  @include backgroundImg((linear-gradient(to right,rgba(96, 160, 216, 0.62),rgba(179, 210, 52, 0.62)),url("../../images/Header_back.png")));
+  @include displayFlex($justify: space-between, $flex : column);
+
+  li {
+    display: flex;
+    margin: 0px 25px;
+    flex-direction: column;
+    align-items: center;
+    div {
+      display: none;
+      height: 2px;
+      background-color: white;
+      width: 70%;
+    }
+    &:hover {
+      div {
+        display: flex;
+      }
+    }
+  }
 }
 
-.titleAccueil{
-    position: relative;
-    h1{
-        font-size: 126px;
+.reseaux {
+  bottom: 24px;
+  right: 20px;
+  align-self: flex-end;
+  position: relative;
+}
+
+.titleAccueil {
+  position: relative;
+  h1 {
+    font-size: 126px;
+    @include breakpoint(600px,"max"){
+      font-size: 80px;
     }
-    p{
-        position: absolute;
-  font-size: 42px;
-  font-style: italic;
-  rotate: -11deg;
-  right: -20%;
-  bottom: -28px;
+  }
+  p {
+    position: absolute;
+    font-size: 42px;
+    font-style: italic;
+    rotate: -11deg;
+    right: -20%;
+    bottom: -28px;
+    @include breakpoint(600px,"max"){
+      rotate: 0deg;
+      right:auto;
+      bottom: auto;
     }
+  }
 }

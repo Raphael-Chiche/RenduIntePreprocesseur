@@ -5,9 +5,14 @@
 footer {
   background-color: $color-primary-green;
   padding: 40px;
+  // width: 100vw;
   .infoFooter {
     @include displayFlex($justify: space-between);
     flex-direction: row;
+
+    @include breakpoint(900px, "max") {
+      flex-direction: column;
+    }
 
     div {
       @include displayFlex();

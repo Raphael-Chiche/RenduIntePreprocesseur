@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
+
+.preparation {
+  @include backgroundImg(
+    url(../../images/ismael-trevino-NDyuR4Huig8-unsplash.png)
+  );
+  @include displayFlex($align:flex-end,$flex : column);
+  height: 100vh;
+
+  @include breakpoint(900px, "max") {
+    height: auto;
+    @include displayFlex($flex : column);
+  }
+  &_Text {
+    padding: 50px;
+    text-align: center;
+    background-color: rgb(178 210 52 / 80%);
+    width: 50%;
+    height: 80%;
+    
+    @include displayFlex($justify: space-evenly, $flex : column);
+    margin-right: 5%;
+
+    @include breakpoint(900px, "max") {
+      width: 80%;
+      margin-right: 0%;
+      margin: 5%;
+      height: auto;
+    }
+
+    h2{
+        font-size: $font-size-large;    
+        font-weight: $font-weight-large;
+    }
+  }
+}

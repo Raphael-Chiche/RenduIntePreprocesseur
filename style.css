@@ -13,18 +13,26 @@ body {
 .button {
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
+  padding: 14px 60px;
   font-size: 16px;
   cursor: pointer;
 }
 .button_primary {
   background-color: white;
   color: #B2D234;
-  font-weight: 600;
+  font-weight: 500;
+}
+.button_primary:hover {
+  background-color: rgb(219, 219, 219);
+  transition: 0.3s;
 }
 .button_secondary {
   background-color: #B2D234;
   color: white;
+}
+.button_secondary:hover {
+  background-color: #9bb925;
+  transition: 0.3s;
 }
 
 nav {
@@ -34,11 +42,23 @@ nav {
   padding: 20px 30px;
   width: 100%;
 }
+@media screen and (max-width: 900px) {
+  nav {
+    flex-direction: column;
+  }
+}
 nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   list-style: none;
+}
+@media screen and (max-width: 900px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
 nav ul li {
   margin: 0px 25px;
@@ -47,55 +67,96 @@ nav ul button {
   margin: 0px 25px;
 }
 
-.div_second {
+.welcome {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-image: url("../../images/61842.png");
 }
-.div_second .secondImgText {
-  display: flex;
-  justify-items: center;
+@media screen and (max-width: 900px) {
+  .welcome {
+    height: auto;
+  }
 }
-.div_second .secondImgText .secondText {
+.welcome_ImgText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 900px) {
+  .welcome_ImgText {
+    flex-direction: column;
+  }
+}
+.welcome_ImgText_Text {
   width: 50%;
   padding: 50px;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
+  flex-direction: column;
 }
-.div_second .secondImgText .secondText h2 {
+@media screen and (max-width: 900px) {
+  .welcome_ImgText_Text {
+    width: auto;
+    padding: 20px;
+  }
+}
+.welcome_ImgText_Text h2 {
+  font-size: 52px;
   color: #B2D234;
   padding-bottom: 40px;
+  font-weight: 500;
 }
-.div_second .secondImgText .secondText p {
-  color: black;
+.welcome_ImgText_Text p {
+  color: #606060;
   padding-bottom: 20px;
 }
-.div_second .secondImgText img {
+.welcome_ImgText img {
   width: 50%;
   position: relative;
   z-index: 1;
 }
+@media screen and (max-width: 900px) {
+  .welcome_ImgText img {
+    position: absolute;
+    z-index: -1;
+    opacity: 0.4;
+  }
+}
 
-.div_third {
-  height: 100vh;
-  width: 100vw;
-  background-color: red;
+.div_accueil {
   position: relative;
   z-index: 2;
 }
 
 header {
   height: 100vh;
-  width: 100vw;
   background-image: linear-gradient(to right, rgba(96, 160, 216, 0.62), rgba(179, 210, 52, 0.62)), url("../../images/Header_back.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
+}
+header li {
+  display: flex;
+  margin: 0px 25px;
+  flex-direction: column;
+  align-items: center;
+}
+header li div {
+  display: none;
+  height: 2px;
+  background-color: white;
+  width: 70%;
+}
+header li:hover div {
+  display: flex;
 }
 
 .reseaux {
@@ -111,6 +172,11 @@ header {
 .titleAccueil h1 {
   font-size: 126px;
 }
+@media screen and (max-width: 600px) {
+  .titleAccueil h1 {
+    font-size: 80px;
+  }
+}
 .titleAccueil p {
   position: absolute;
   font-size: 42px;
@@ -118,6 +184,13 @@ header {
   rotate: -11deg;
   right: -20%;
   bottom: -28px;
+}
+@media screen and (max-width: 600px) {
+  .titleAccueil p {
+    rotate: 0deg;
+    right: auto;
+    bottom: auto;
+  }
 }
 
 footer {
@@ -130,6 +203,11 @@ footer .infoFooter {
   align-items: center;
   flex-direction: row;
 }
+@media screen and (max-width: 900px) {
+  footer .infoFooter {
+    flex-direction: column;
+  }
+}
 footer .infoFooter div {
   display: flex;
   justify-content: center;
@@ -137,109 +215,347 @@ footer .infoFooter div {
   flex-direction: column;
 }
 footer .infoFooter div h3 {
-  font-weight: 600;
+  font-weight: 500;
   padding-bottom: 24px;
 }
 
-.div_sixth {
+.formulaire {
   background-image: url("../../images/61842.png");
   display: flex;
   align-items: center;
+  height: 100vh;
 }
-.div_sixth h3,
-.div_sixth p,
-.div_sixth label {
-  color: black;
+@media screen and (max-width: 900px) {
+  .formulaire {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 }
-.div_sixth .imgSixth {
+.formulaire h3,
+.formulaire p,
+.formulaire label {
+  color: #606060;
+}
+.formulaire_image {
   width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.div_sixth .textSixth {
+.formulaire_image img {
+  width: auto;
+  clip-path: polygon(49% 49%, 51% 49%, 51% 0%, 100% 0%, 100% 49%, 51% 49%, 51% 51%, 100% 51%, 100% 100%, 51% 100%, 51% 51%, 49% 51%, 49% 100%, 0% 100%, 0% 51%, 51% 51%, 51% 49%, 49% 49%, 0% 49%, 0% 0%, 49% 0%);
+}
+@media screen and (max-width: 900px) {
+  .formulaire_image img {
+    max-width: 100vw;
+  }
+}
+.formulaire_image_barre, .formulaire_image_barre_vertical {
+  height: 50px;
+  width: 7px;
+  background-color: white;
+  z-index: 1;
+  position: absolute;
+}
+.formulaire_image_barre_vertical {
+  rotate: 90deg;
+}
+.formulaire_Text {
   width: 50%;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: stretch;
+  flex-direction: column;
   padding: 50px;
 }
-.div_sixth .textSixth .introTxtSixth {
+@media screen and (max-width: 900px) {
+  .formulaire_Text {
+    width: auto;
+    padding: 20px;
+  }
+}
+.formulaire_Text_Intro {
   padding-bottom: 20px;
 }
-.div_sixth .textSixth .introTxtSixth h3 {
+.formulaire_Text_Intro h3 {
   color: #B2D234;
   font-size: 40px;
   padding: 20px 0px;
 }
-.div_sixth .textSixth .formButton {
+.formulaire_Text .formButton {
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
-.div_sixth .textSixth .formButton .submit {
+.formulaire_Text .formButton .submit {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.div_sixth .textSixth .formButton .nomPrenom {
+.formulaire_Text .formButton .nomPrenom {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  gap: 10px;
 }
-.div_sixth .textSixth .formButton .label {
+.formulaire_Text .formButton .label {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
-.div_sixth .textSixth .formButton .label input {
+.formulaire_Text .formButton .label input {
   border: 1px solid #d6d6d6;
   height: 45px;
 }
-.div_sixth .textSixth .formButton .label textarea {
+.formulaire_Text .formButton .label textarea {
   border: 1px solid #d6d6d6;
 }
-.div_sixth .textSixth .formButton .label label {
+.formulaire_Text .formButton .label label {
   color: #B2D234;
-  font-weight: 600;
+  font-weight: 500;
   font-style: italic;
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
 }
 
-.div_fifth {
+.chezVB {
   height: 100vh;
-  width: 100vw;
   background-image: url("../../images/louis-hansel-MlPD-AzZYMg-unsplash.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   padding: 128px 124px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  text-align: center;
 }
-.div_fifth .prepa {
-  margin: 10px;
+@media screen and (max-width: 900px) {
+  .chezVB {
+    grid-template-columns: 1fr;
+    padding: 10%;
+    height: auto;
+  }
+}
+.chezVB .prepa_verts, .chezVB .prepa_bleus {
+  display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 2fr;
-}
-.div_fifth .prepa_verts {
   grid-column: 1/2;
-  background-color: #B2D234;
+  background-color: hwb(72deg 20% 18%/85%);
 }
-.div_fifth .prepa_verts_un {
-  grid-column: 1/2;
-  grid-row: 2/3;
+.chezVB .prepa_verts_un {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.div_fifth .prepa_verts_deux {
+.chezVB .prepa_verts_deux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chezVB .prepa_verts_text {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 52px;
+  font-weight: 500;
+}
+.chezVB .prepa_bleus {
   grid-column: 2/3;
-  grid-row: 2/3;
+  background-color: hwb(208deg 38% 15%/85%);
 }
-.div_fifth .prepa_verts_text {
+@media screen and (max-width: 900px) {
+  .chezVB .prepa_bleus {
+    grid-column: 1/2;
+  }
+}
+.chezVB .prepa_bleus_un {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chezVB .prepa_bleus_deux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chezVB .prepa_bleus_text {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 52px;
+  font-weight: 500;
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  background-image: url("../../images/pattern.png");
+}
+.menu * {
+  color: #606060;
+}
+@media screen and (max-width: 900px) {
+  .menu {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+  }
+}
+.menu_Intro {
   grid-column: 1/3;
   grid-row: 1/2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20px 200px;
+  padding: 50px;
+  text-align: center;
 }
-.div_fifth .prepa_bleus {
+@media screen and (max-width: 900px) {
+  .menu_Intro {
+    padding: 0px;
+    margin: 30px;
+  }
+}
+.menu_Intro h3 {
+  color: #B2D234;
+  font-size: 52px;
+  font-weight: 500;
+}
+.menu_Salades {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  padding: 30px;
+  justify-content: space-around;
+}
+.menu_Salades_salade {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.menu_Salades_salade_nomPrix {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.menu_Salades_salade_nomPrix h4 {
+  color: #B2D234;
+}
+.menu .saladeVendu {
+  display: flex;
+  flex-direction: column;
+}
+.menu .saladeVendu_plus {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.menu .saladeVendu_plus p {
+  background-color: #B2D234;
+  color: white;
+  padding: 5px;
+  outline: 1px solid #B2D234;
+}
+.menu .saladeVendu .borderSalade {
+  padding: 10px;
+  outline: 1px solid #B2D234;
+}
+.menu .passerCommande {
   grid-column: 2/3;
-  background-color: #60a0d8;
+  grid-row: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 900px) {
+  .menu .passerCommande {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+}
+.menu .passerCommande_forceVerte, .menu .passerCommande_forceBleue {
+  color: #B2D234;
+  font-style: italic;
+  font-size: 54px;
+  rotate: -9deg;
+  font-weight: 300;
+}
+.menu .passerCommande_forceBleue {
+  color: rgb(97, 161, 217);
+}
+.menu .passerCommande p {
+  padding: 50px;
+  text-align: center;
+}
+.menu .passerCommande button {
+  color: white;
+}
+
+.preparation {
+  background-image: url(../../images/ismael-trevino-NDyuR4Huig8-unsplash.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  height: 100vh;
+}
+@media screen and (max-width: 900px) {
+  .preparation {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+.preparation_Text {
+  padding: 50px;
+  text-align: center;
+  background-color: rgba(178, 210, 52, 0.8);
+  width: 50%;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 5%;
+}
+@media screen and (max-width: 900px) {
+  .preparation_Text {
+    width: 80%;
+    margin-right: 0%;
+    margin: 5%;
+    height: auto;
+  }
+}
+.preparation_Text h2 {
+  font-size: 52px;
+  font-weight: 500;
 }
 
 body {
@@ -247,8 +563,7 @@ body {
 }
 
 .div {
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

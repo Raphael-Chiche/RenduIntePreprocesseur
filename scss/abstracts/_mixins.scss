@@ -1,6 +1,38 @@
-@mixin displayFlex($justify: center, $align: center) {
+@mixin displayFlex($justify: center, $align: center, $flex : null) {
   display: flex;
   justify-content: $justify;
   align-items: $align;
-
+  flex-direction: $flex;
 }
+
+@mixin backgroundImg(
+  $bg-image,
+  $bg-repeat: no-repeat,
+  $bg-size: cover,
+  $bg-position: center
+) {
+  background-image: $bg-image;
+  background-repeat: $bg-repeat;
+  background-size: $bg-size;
+  background-position: $bg-position;
+}
+
+@mixin gridColumnRow($col-start :null,  $col-end: null, $row-start :null, $row-end : null) {
+  grid-column-start: $col-start;
+  grid-column-end: $col-end;
+  grid-row-start: $row-start;
+  grid-row-end: $row-end;
+}
+
+
+@mixin breakpoint($size,$type : "min"){
+  @if $type == "min" {
+      @media screen and (min-width: $size) {
+          @content;
+      }
+  } @else {
+      @media screen and (max-width: $size) {
+          @content;
+      }
+  }
+} 

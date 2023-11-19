@@ -2,27 +2,36 @@
 @use "../abstracts/mixins" as *;
 @use "../base/typography" as *;
 
-.div_second {
+.welcome {
   height: 100vh;
   width: 100vw;
+  @include displayFlex();
   background-image: url("../../images/61842.png");
 
-  .secondImgText {
-    display: flex;
-    justify-items: center;
-    .secondText {
+  @include breakpoint(900px, "max") {
+    height: auto;
+  }
+  &_ImgText {
+    @include displayFlex();
+    @include breakpoint(900px, "max") {
+      flex-direction: column;
+    }
+    &_Text {
         width: 50%;
         padding: 50px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-      h2 {
+        @include displayFlex($justify: space-around, $align: flex-start, $flex: column);
+        @include breakpoint(900px, "max") {
+          width: auto;
+          padding: 20px;
+        }   
+        h2 {
+        font-size: $font-size-large;
         color: $color-primary-green;
         padding-bottom:40px ;
+        font-weight: $font-weight-large;
       }
       p {
-        color: black;
+        color: #606060;
         padding-bottom: 20px;
       }
     }
@@ -31,14 +40,13 @@
         width: 50%;
         position: relative;
         z-index: 1;
+
+        @include breakpoint(900px, "max") {
+          position: absolute;
+          z-index: -1;
+          opacity: 0.4;
+        }
       }
     
   }
-}
-.div_third {
-  height: 100vh;
-  width: 100vw;
-  background-color: red;
-  position: relative;
-  z-index: 2;
 }

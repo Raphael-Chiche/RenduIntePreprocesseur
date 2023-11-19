@@ -1,13 +1,23 @@
-@use '../abstracts/mixins' as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../base/typography" as *;
 
 nav{
     @include displayFlex($justify: space-between);
     padding: 20px 30px;
     width: 100%;
 
+    @include breakpoint(900px,"max"){
+        flex-direction: column;
+    }
     ul{
         @include displayFlex();
+        flex-wrap: wrap;
         list-style: none;
+        @include breakpoint(900px,"max"){
+            flex-direction: column;
+            gap: 10px;
+        }
 
        li{
         margin: 0px 25px;

@@ -93,6 +93,7 @@
       align-items: stretch;
       .submit {
         @include displayFlex();
+        padding: 10px;
       }
       .nomPrenom {
         display: flex;

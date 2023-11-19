@@ -53,7 +53,7 @@ header {
     rotate: -11deg;
     right: -20%;
     bottom: -28px;
-    @include breakpoint(600px,"max"){
+    @include breakpoint(900px,"max"){
       rotate: 0deg;
       right:auto;
       bottom: auto;

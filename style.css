@@ -185,7 +185,7 @@ header li:hover div {
   right: -20%;
   bottom: -28px;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
   .titleAccueil p {
     rotate: 0deg;
     right: auto;
@@ -292,6 +292,7 @@ footer .infoFooter div h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 10px;
 }
 .formulaire_Text .formButton .nomPrenom {
   display: flex;
@@ -317,7 +318,7 @@ footer .infoFooter div h3 {
   font-style: italic;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .chezVB {
@@ -544,6 +545,12 @@ footer .infoFooter div h3 {
   align-items: center;
   flex-direction: column;
   margin-right: 5%;
+}
+.preparation_Text .souligner {
+  text-decoration: underline;
+}
+.preparation_Text .gras {
+  font-weight: bold;
 }
 @media screen and (max-width: 900px) {
   .preparation_Text {

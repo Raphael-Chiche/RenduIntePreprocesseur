@@ -19,7 +19,12 @@
     background-color: rgb(178 210 52 / 80%);
     width: 50%;
     height: 80%;
-    
+    .souligner{
+        text-decoration: underline;
+    }
+    .gras{
+        font-weight: bold;
+    }
     @include displayFlex($justify: space-evenly, $flex : column);
     margin-right: 5%;
 
